@@ -5,6 +5,13 @@ body{
     background-color: #9c9c9c1e;
 }
 
+#notice{
+    color: green;
+    text-align: center;
+    font-size: 1.23rem;
+    text-shadow: 1px 1px 13px wheat;
+}
+
 #container{
     margin-top: 3rem;
     display: grid;
@@ -46,6 +53,12 @@ body{
     }
 
 }
+h1{
+    text-align: center;
+    margin-top: 50px;
+    font-weight: bolder;
+}
+
 
 form{
     display: flex;

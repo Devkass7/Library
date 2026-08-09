@@ -1,9 +1,7 @@
 
 const myLibrary = []
 
-document.getElementsByTagName("dialog").addEventListener((e) =>{
-    e.preventDefault;
-})
+
 
 function getBookDetails(){
 document.getElementById("add").addEventListener("click", (event) =>{
@@ -17,6 +15,8 @@ document.getElementById("add").addEventListener("click", (event) =>{
     let status = ""
    if(document.querySelector('input[type = "checkbox"]').checked){
     status = "Read"
+   }else{
+    status = "Inprogress"
    };
 
    try {
@@ -82,7 +82,12 @@ function createCard(){
     const cardElement = document.getElementById("container")
     cardElement.innerHTML = ""
     if(myLibrary.length === 0){
-        document.getElementById("container").innerHTML = "<h2 class='zero'>Add some books to your <i>Library</i></h2>."}
+        document.getElementById("notice").innerHTML = "<h2 class='zero'>Add  books to your <i>Library</i></h2>."
+    }else{
+        document.getElementById("notice").innerHTML = ""
+    }
+
+   
 
    
     myLibrary.map((element) =>{
@@ -119,5 +124,8 @@ function createCard(){
 }
 
  if(myLibrary.length === 0){
-        document.getElementById("container").innerHTML = "<h2 class='zero'>Add some books to your <i>Library</i></h2>."
+        document.getElementById("notice").innerHTML = "<h2 class='zero'>Add  books to your <i>Library</i></h2>."
+    }else{
+        document.getElementById("notice").innerHTML = ""
     }
+
