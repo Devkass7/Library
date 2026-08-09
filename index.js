@@ -75,30 +75,49 @@ getBookDetails()
 function createCard(){ 
     const cardElement = document.getElementById("container")
     cardElement.innerHTML = ""
+    if(myLibrary.length === 0){
+        document.getElementById("container").innerHTML = "<h2 class='zero'>Add some books to your <i>Library</i></h2>."}
 
-
+   
     myLibrary.map((element) =>{
         let newDiv = document.createElement("div");
         newDiv.innerHTML = `<h2>Title: ${element.title}</h2>
         <p>Author: ${element.author}</p> <p>Pages: ${element.pages}</p>
         <p>Status: ${element.status}</p>
-        <button id=${element.id} class= "delete-btn">DELETE</button>`
+        <button btn-id=${element.id} class= "delete-btn">DELETE</button>`
         
         cardElement.appendChild(newDiv)
 
     
-       const del = document.querySelector(".delete-btn")
-        del.addEventListener("click",() =>{
-            const index = myLibrary.findIndex(book => book.id == del.dataset.id)
-           myLibrary.splice(index, 1)
+      const del = newDiv.querySelector(".delete-btn")
+      del.addEventListener("click", () => {
+        const cardId = del.getAttribute("btn-id")
 
-           console.log(myLibrary)
-           createCard()
-})
+       const bookId = myLibrary.findIndex(book => {
+        return book.id === cardId
+      })
 
+      if(bookId !== 1){
+        myLibrary.splice(bookId,1)
+        createCard()
+
+      }
+      else{
+        alert("Book was not found!")
+      }
+          console.log(bookId);
+            createCard()          
+      }
+
+    
+      
+
+      
+
+      )
     })
-
-  
 }
 
-
+ if(myLibrary.length === 0){
+        document.getElementById("container").innerHTML = "<h2 class='zero'>Add some books to your <i>Library</i></h2>."
+    }
