@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<button command = "show-modal" commandfor="form-dialog">Add New Book</button>
 
-
+<dialog id="form-dialog">
     <form action="#" id="form">
         <fieldset><legend>Enter Book Details </legend> 
         <div>
@@ -37,7 +38,9 @@
         </div>
        </fieldset>
     </form>
-    
+
+    <button command = "close" commandfor="form-dialog">Close Form</button>
+    </dialog>
 
 
     <main id="container">

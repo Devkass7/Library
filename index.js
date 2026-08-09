@@ -1,6 +1,10 @@
 
 const myLibrary = []
 
+document.getElementsByTagName("dialog").addEventListener((e) =>{
+    e.preventDefault;
+})
+
 function getBookDetails(){
 document.getElementById("add").addEventListener("click", (event) =>{
    
@@ -10,7 +14,11 @@ document.getElementById("add").addEventListener("click", (event) =>{
     const title = document.getElementById("title").value;
 
     const pages = document.getElementById("pages").value
-   let status = ""
+    let status = ""
+   if(document.querySelector('input[type = "checkbox"]').checked){
+    status = "Read"
+   };
+
    try {
     if(authorName && title && pages){
         addToLibrary(authorName,title,pages,status)
@@ -21,11 +29,9 @@ document.getElementById("add").addEventListener("click", (event) =>{
    } catch (error) {
     alert("fill all Fields!")
     console.error("Error")
-   }
+   };
 
-    if(document.getElementById("status").value == "on"){
-     status = 'Read'   
-    }
+
 
 
 
@@ -97,7 +103,7 @@ function createCard(){
         return book.id === cardId
       })
 
-      if(bookId !== 1){
+      if(bookId !== -1){
         myLibrary.splice(bookId,1)
         createCard()
 
@@ -108,12 +114,6 @@ function createCard(){
           console.log(bookId);
             createCard()          
       }
-
-    
-      
-
-      
-
       )
     })
 }
