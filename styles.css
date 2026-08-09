@@ -1,0 +1,75 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #9c9c9c1e;
+}
+
+#container{
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 250px));
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+
+
+
+    div{
+        height: 200px;
+        border-radius: 15px;
+        box-shadow: 4px 3px 16px #9c9c9cbd;
+        padding: 20px;
+
+
+        &:hover{
+            scale: 1.03;
+            background-color: seashell;
+        }
+       
+        #button{
+            background-color: pink;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-left: 50%;
+            font-size: 0.9rem;
+            box-shadow: 1px 1px 5px rgb(253, 3, 3) ;
+            font-weight: bold;
+
+
+            &:hover{
+                background-color: red;
+            }
+        }
+       
+    }
+
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+   
+    
+}
+
+fieldset{
+    width: fit-content;
+    display: flex;
+    padding: 10px 50px;
+    flex-direction: column;
+    border-radius: 10px;
+    gap: 10px;
+
+    input{
+        width: fit-content;
+        display: block;
+    }
+
+     .read{
+            display: flex;
+        }
+}
